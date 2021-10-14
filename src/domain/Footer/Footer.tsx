@@ -2,12 +2,15 @@ import { useWallet, useConnectedWallet } from "@terra-money/wallet-provider";
 import React, { useEffect, useMemo, useState } from "react";
 
 import { LCDClient } from "@terra-money/terra.js";
+import { isConstructorDeclaration } from "typescript";
+import { Block } from "./Block";
 
 export const Footer = () => {
   const { status, network, wallets } = useWallet();
   const connectedWallet = useConnectedWallet();
 
   const [bank, setBank] = useState<null | string>();
+  const [lastBlock, setLastBlock] = useState<number | unknown>();
 
   const lcd = useMemo(() => {
     if (!connectedWallet) {
@@ -24,6 +27,10 @@ export const Footer = () => {
     if (connectedWallet && lcd) {
       lcd.bank.balance(connectedWallet.walletAddress).then((coins) => {
         setBank(coins.toString());
+      });
+
+      lcd.tendermint.blockInfo().then((block) => {
+        setLastBlock(block?.block?.last_commit.height);
       });
     } else {
       setBank(null);
@@ -53,6 +60,7 @@ export const Footer = () => {
           )}
         </pre>
         {bank && <pre>{bank}</pre>}
+        <Block block={lastBlock} />
       </section>
     </div>
   );
