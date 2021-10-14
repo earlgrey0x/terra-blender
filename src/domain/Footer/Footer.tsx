@@ -1,8 +1,6 @@
-import { useWallet, useConnectedWallet } from "@terra-money/wallet-provider";
-import React, { useEffect, useMemo, useState } from "react";
-
 import { LCDClient } from "@terra-money/terra.js";
-import { isConstructorDeclaration } from "typescript";
+import { useConnectedWallet, useWallet } from "@terra-money/wallet-provider";
+import React, { useEffect, useMemo, useState } from "react";
 import { Block } from "./Block";
 
 export const Footer = () => {
