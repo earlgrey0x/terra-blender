@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+# Terra Blendr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides the primitives for privacy solution in blockchain wallet funding.
 
-## Available Scripts
+## Regarding the Terra integration
 
-In the project directory, you can run:
+The project uses the `terra-money/terra.js` and the `terra-money/wallet-provider` to help with the connectivity to the wallet.
+
+The documentation can be found in `https://github.com/terra-money/terra.js/wiki` but also in the base of the repository `https://github.com/terra-money/terra.js`.
+
+Keep in mind that the wallet-provider has a different repository (https://github.com/terra-money/wallet-provider) and most of the documentation can actually be found in action looking to the code of [Anchor](https://github.com/Anchor-Protocol/anchor-web-app) and [Mirror](https://github.com/Mirror-Protocol/terra-web-app) WebApp projects.
+
+## How to get start
+
+The project is a common client-side React application using the version 17. Therefore is essential to setup the common Node/NPM development environment.
+
+After that, proceed with the regular `npm install` or `yarn` to download the dependencies.
+
+The following scripts are pre-build to allow the local development.
 
 ### `yarn start`
 
@@ -28,16 +40,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
